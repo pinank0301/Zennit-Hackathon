@@ -12,7 +12,7 @@ const Hero = () => {
       <div 
         ref={heroRef}
         style={getHeroStyles()}
-        className="pt-20 lg:pt-24 p-5 lg:p-10 flex flex-col lg:flex-row justify-between gap-12 lg:gap-10"
+        className="pt-20 lg:pt-26 p-5 lg:p-10 flex flex-col lg:flex-row justify-between gap-12 lg:gap-10"
       >
       {/* Left section */}
       <div 
@@ -37,25 +37,6 @@ const Hero = () => {
           <h1>
             <span className="">your</span> dream house{" "}
           </h1>
-        </div>
-
-        {/* CTA Buttons */}
-        <div className="flex items-center gap-1">
-          <button className="px-5 py-3 text-white bg-[#191c1e] rounded-2xl text-sm sm:text-base">
-            Start Exploring
-          </button>
-          <div className="bg-[#191c1e] rounded-full h-12 w-12 flex items-center justify-center hover:bg-[#2a2d2f] transition">
-            {/* ArrowRight (inline SVG) */}
-            <svg
-              className="text-white w-5 h-5 -rotate-45"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              viewBox="0 0 24 24"
-            >
-              <path strokeLinecap="round" strokeLinejoin="round" d="M5 12h14M12 5l7 7-7 7" />
-            </svg>
-          </div>
         </div>
 
         {/* Dropdowns */}

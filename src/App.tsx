@@ -3,6 +3,8 @@ import FeaturedProperties from "./components/FeaturedProperties"
 import Services from "./components/Services"
 import Testimonials from "./components/Testimonials"
 import Contact from "./components/Contact"
+import Footer from "./components/Footer"
+import BackToTop from "./components/BackToTop"
 
 const App = () => {
   return (
@@ -12,6 +14,8 @@ const App = () => {
       <Services />
       <Testimonials />
       <Contact />
+      <Footer />
+      <BackToTop />
     </div>
   )
 }
