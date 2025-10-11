@@ -5,6 +5,7 @@ import Testimonials from "./components/Testimonials"
 import Contact from "./components/Contact"
 import Footer from "./components/Footer"
 import BackToTop from "./components/BackToTop"
+import AskAgent from "./components/AskAgent"
 
 const App = () => {
   return (
@@ -16,6 +17,7 @@ const App = () => {
       <Contact />
       <Footer />
       <BackToTop />
+      <AskAgent />
     </div>
   )
 }
