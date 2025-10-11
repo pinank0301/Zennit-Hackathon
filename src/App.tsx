@@ -7,10 +7,12 @@ import Footer from "./components/Footer"
 import BackToTop from "./components/BackToTop"
 import AskAgent from "./components/AskAgent"
 import WhyUs from "./components/WhyUs"
+import { Analytics } from "@vercel/analytics/react"
 
 const App = () => {
   return (
     <div className="min-h-screen">
+      <Analytics />
       <Hero />
       <FeaturedProperties />
       <WhyUs />
