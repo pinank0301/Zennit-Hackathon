@@ -176,7 +176,7 @@ const AskAgent = () => {
       {/* Floating Button */}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="fixed bottom-8 left-8 z-50 bg-orange-500 hover:bg-orange-600 text-white p-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 group"
+        className="fixed bottom-8 left-8 z-50 bg-primary hover:bg-primary/90 text-primary-foreground p-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 group"
         aria-label="Ask the Agent"
       >
         <MessageCircle className="h-6 w-6 group-hover:animate-pulse" />
@@ -186,9 +186,9 @@ const AskAgent = () => {
       {isOpen && (
         <div className="fixed bottom-24 left-8 z-50 w-80 h-96 bg-white rounded-2xl shadow-2xl border border-gray-200 flex flex-col">
           {/* Header */}
-          <div className="bg-orange-500 text-white p-4 rounded-t-2xl flex justify-between items-center">
+          <div className="bg-primary text-primary-foreground p-4 rounded-t-2xl flex justify-between items-center">
             <div className="flex items-center space-x-2">
-              <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center p-1">
+              <div className="w-8 h-8 bg-primary-foreground rounded-full flex items-center justify-center p-1">
                 <img 
                   src="/logo.svg" 
                   alt="EstatePro Logo" 
@@ -197,12 +197,12 @@ const AskAgent = () => {
               </div>
               <div>
                 <h3 className="font-semibold">Estate Agent</h3>
-                <p className="text-xs text-orange-100">Online now</p>
+                <p className="text-xs text-primary-foreground/80">Online now</p>
               </div>
             </div>
             <button
               onClick={() => setIsOpen(false)}
-              className="text-orange-100 hover:text-white transition-colors"
+              className="text-primary-foreground/80 hover:text-primary-foreground transition-colors"
             >
               <X className="h-5 w-5" />
             </button>
@@ -218,7 +218,7 @@ const AskAgent = () => {
                 <div
                   className={`max-w-[80%] p-3 rounded-2xl text-sm ${
                     message.isUser
-                      ? 'bg-orange-500 text-white'
+                      ? 'bg-primary text-primary-foreground'
                       : 'bg-gray-100 text-gray-800'
                   }`}
                 >
@@ -250,7 +250,7 @@ const AskAgent = () => {
                     <button
                       key={index}
                       onClick={() => handleQuickQuestion(question.text, index)}
-                      className="flex items-center space-x-1 px-2 py-1 text-xs bg-gray-100 hover:bg-orange-100 hover:text-orange-600 rounded-full transition-colors"
+                      className="flex items-center space-x-1 px-2 py-1 text-xs bg-muted hover:bg-primary/10 hover:text-primary rounded-full transition-colors"
                     >
                       {question.icon}
                       <span>{question.text}</span>
@@ -270,11 +270,11 @@ const AskAgent = () => {
                 onChange={(e) => setInputText(e.target.value)}
                 onKeyPress={handleKeyPress}
                 placeholder="Ask about properties, loans, legal..."
-                className="flex-1 px-3 py-2 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm"
+                className="flex-1 px-3 py-2 border border-border rounded-xl focus:outline-none focus:ring-2 focus:ring-ring text-sm"
               />
               <button
                 onClick={() => handleSendMessage()}
-                className="bg-orange-500 hover:bg-orange-600 text-white p-2 rounded-xl transition-colors"
+                className="bg-primary hover:bg-primary/90 text-primary-foreground p-2 rounded-xl transition-colors"
               >
                 <Send className="h-4 w-4" />
               </button>

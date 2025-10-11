@@ -48,9 +48,9 @@ const Contact = () => {
         {/* Section Header */}
         <div ref={ref} style={getHeaderStyles()} className="text-center mb-16">
           <h2 className="text-4xl lg:text-5xl font-bold tracking-tight mb-4">
-            Get In <span className="text-orange-500">Touch</span>
+            Get In <span className="text-primary">Touch</span>
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             Ready to find your dream property or sell your current one? Our expert team is here to help you every step of the way.
           </p>
         </div>
@@ -58,19 +58,19 @@ const Contact = () => {
         {/* Contact Form */}
         <div className="max-w-4xl mx-auto">
           <div ref={formRef} style={getFormStyles()} className="bg-white rounded-3xl shadow-2xl p-8 lg:p-12">
-            <h3 className="text-2xl font-bold text-gray-900 mb-6">Send us a Message</h3>
+            <h3 className="text-2xl font-bold text-foreground mb-6">Send us a Message</h3>
             
             {isSubmitted ? (
               <div className="text-center py-12">
                 <CheckCircle className="h-16 w-16 text-green-500 mx-auto mb-4" />
-                <h4 className="text-2xl font-bold text-gray-900 mb-2">Message Sent!</h4>
-                <p className="text-gray-600">We'll get back to you within 24 hours.</p>
+                <h4 className="text-2xl font-bold text-foreground mb-2">Message Sent!</h4>
+                <p className="text-muted-foreground">We'll get back to you within 24 hours.</p>
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label className="block text-sm font-medium text-foreground mb-2">
                       Full Name *
                     </label>
                     <input
@@ -79,12 +79,12 @@ const Contact = () => {
                       value={formData.name}
                       onChange={handleInputChange}
                       required
-                      className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-300"
+                      className="w-full px-4 py-3 border border-border rounded-xl focus:ring-2 focus:ring-ring focus:border-transparent transition-all duration-300"
                       placeholder="Your full name"
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label className="block text-sm font-medium text-foreground mb-2">
                       Email Address *
                     </label>
                     <input
@@ -93,7 +93,7 @@ const Contact = () => {
                       value={formData.email}
                       onChange={handleInputChange}
                       required
-                      className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-300"
+                      className="w-full px-4 py-3 border border-border rounded-xl focus:ring-2 focus:ring-ring focus:border-transparent transition-all duration-300"
                       placeholder="your@email.com"
                     />
                   </div>
@@ -101,7 +101,7 @@ const Contact = () => {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label className="block text-sm font-medium text-foreground mb-2">
                       Phone Number
                     </label>
                     <input
@@ -109,19 +109,19 @@ const Contact = () => {
                       name="phone"
                       value={formData.phone}
                       onChange={handleInputChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-300"
+                      className="w-full px-4 py-3 border border-border rounded-xl focus:ring-2 focus:ring-ring focus:border-transparent transition-all duration-300"
                       placeholder="+91 98765 43210"
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label className="block text-sm font-medium text-foreground mb-2">
                       Property Type
                     </label>
                     <select
                       name="propertyType"
                       value={formData.propertyType}
                       onChange={handleInputChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-300"
+                      className="w-full px-4 py-3 border border-border rounded-xl focus:ring-2 focus:ring-ring focus:border-transparent transition-all duration-300"
                     >
                       <option value="">Select property type</option>
                       <option value="apartment">Apartment</option>
@@ -169,7 +169,7 @@ const Contact = () => {
 
                 <Button
                   type="submit"
-                  className="w-full bg-orange-500 hover:bg-orange-600 text-white py-4 rounded-xl text-lg font-semibold transition-all duration-300 hover:scale-105"
+                  className="w-full bg-primary hover:bg-primary/90 text-primary-foreground py-4 rounded-xl text-lg font-semibold transition-all duration-300 hover:scale-105"
                 >
                   <Send className="h-5 w-5 mr-2" />
                   Send Message

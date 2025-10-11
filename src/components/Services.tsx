@@ -82,9 +82,9 @@ const Services = () => {
         {/* Section Header */}
         <div ref={ref} style={getHeaderStyles()} className="text-center mb-16">
           <h2 className="text-4xl lg:text-5xl font-bold tracking-tight mb-4">
-            Our <span className="text-orange-500">Services</span>
+            Our <span className="text-primary">Services</span>
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             We provide comprehensive real estate services to help you buy, sell, and manage properties with confidence and expertise.
           </p>
         </div>
@@ -104,10 +104,10 @@ const Services = () => {
                 animationDelay: `${index * 100}ms`
               }}
             >
-              <div className="text-4xl lg:text-5xl font-bold text-orange-500 mb-2 group-hover:scale-110 transition-transform duration-300">
+              <div className="text-4xl lg:text-5xl font-bold text-primary mb-2 group-hover:scale-110 transition-transform duration-300">
                 {stat.number}{stat.label === "Client Satisfaction" ? "%" : "+"}
               </div>
-              <div className="text-gray-600 font-medium">{stat.label}</div>
+              <div className="text-muted-foreground font-medium">{stat.label}</div>
             </div>
           ))}
         </div>
@@ -118,25 +118,25 @@ const Services = () => {
             <div
               key={index}
               style={getServiceStyles(index)}
-              className="group bg-gradient-to-br from-white to-gray-50 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-gray-100"
+              className="group bg-gradient-to-br from-card to-muted/30 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-border"
             >
               {/* Service Icon */}
-              <div className="bg-orange-100 text-orange-500 rounded-2xl p-4 w-fit mb-6 group-hover:bg-orange-500 group-hover:text-white transition-all duration-300">
+              <div className="bg-primary/10 text-primary rounded-2xl p-4 w-fit mb-6 group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300">
                 {service.icon}
               </div>
 
               {/* Service Content */}
-              <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-orange-500 transition-colors">
+              <h3 className="text-2xl font-bold text-foreground mb-4 group-hover:text-primary transition-colors">
                 {service.title}
               </h3>
-              <p className="text-gray-600 mb-6 leading-relaxed">
+              <p className="text-muted-foreground mb-6 leading-relaxed">
                 {service.description}
               </p>
 
               {/* Service Features */}
               <ul className="space-y-3 mb-6">
                 {service.features.map((feature, featureIndex) => (
-                  <li key={featureIndex} className="flex items-center text-sm text-gray-600">
+                  <li key={featureIndex} className="flex items-center text-sm text-muted-foreground">
                     <CheckCircle className="h-4 w-4 text-green-500 mr-3 flex-shrink-0" />
                     {feature}
                   </li>
@@ -146,7 +146,7 @@ const Services = () => {
               {/* Learn More Button */}
               <Button 
                 variant="outline" 
-                className="w-full group-hover:bg-orange-500 group-hover:text-white group-hover:border-orange-500 transition-all duration-300"
+                className="w-full group-hover:bg-primary group-hover:text-primary-foreground group-hover:border-primary transition-all duration-300"
               >
                 Learn More
                 <ArrowRight className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform" />

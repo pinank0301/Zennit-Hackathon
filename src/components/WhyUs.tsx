@@ -15,37 +15,37 @@ export default function WhyUs() {
     {
       title: "Personalized Search",
       desc: "At EstatePro, we understand that every client has unique needs and preferences. Our AI-powered search engine learns your requirements to show you the most relevant properties.",
-      icon: <UserSearch className="w-16 h-16 text-orange-500" strokeWidth={1.25} />,
+      icon: <UserSearch className="w-16 h-16 text-primary" strokeWidth={1.25} />,
     },
     {
       title: "Premium Properties",
       desc: "Explore our curated collection of high-quality properties across Mumbai, Delhi, Bangalore, and other major cities. We feature only verified and premium listings.",
-      icon: <Sparkles className="w-16 h-16 text-orange-500" strokeWidth={1.25} />,
+      icon: <Sparkles className="w-16 h-16 text-primary" strokeWidth={1.25} />,
     },
     {
       title: "Expert AI Guidance",
       desc: "Get intelligent recommendations and market insights with our advanced AI technology. Navigate the complexities of real estate with confidence.",
-      icon: <Bot className="w-16 h-16 text-orange-500" strokeWidth={1.25} />,
+      icon: <Bot className="w-16 h-16 text-primary" strokeWidth={1.25} />,
     },
     {
       title: "Seamless Process",
       desc: "Enjoy a smooth property journey with our dedicated team handling everything from search to legal documentation. We make real estate simple.",
-      icon: <Star className="w-16 h-16 text-orange-500" strokeWidth={1.25} />,
+      icon: <Star className="w-16 h-16 text-primary" strokeWidth={1.25} />,
     },
     {
       title: "Trusted Expertise",
       desc: "Leverage our years of experience in the Indian real estate market to make confident property decisions. We know the market inside out.",
-      icon: <BookCheck className="w-16 h-16 text-orange-500" strokeWidth={1.25} />,
+      icon: <BookCheck className="w-16 h-16 text-primary" strokeWidth={1.25} />,
     },
     {
       title: "Tailored Solutions",
       desc: "Experience services specifically designed to meet your lifestyle and investment goals. From first-time buyers to seasoned investors, we've got you covered.",
-      icon: <Cuboid className="w-16 h-16 text-orange-500" strokeWidth={1.25} />,
+      icon: <Cuboid className="w-16 h-16 text-primary" strokeWidth={1.25} />,
     },
   ];
 
   return (
-    <section id="why-us" className="py-20 px-4 md:px-20 bg-orange-50">
+    <section id="why-us" className="py-20 px-4 md:px-20 bg-muted/30">
       <div className="max-w-7xl mx-auto text-center">
         <div ref={ref} style={getHeaderStyles()} className={`transition-all duration-1000 ${
           isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
@@ -54,14 +54,14 @@ export default function WhyUs() {
             Why Choose Us
           </h3>
           <h2 className="text-4xl font-semibold tracking-tighter text-gray-900 mb-12">
-            Why we stand out in finding your <span className="text-orange-500">dream</span> property
+            Why we stand out in finding your <span className="text-primary">dream</span> property
           </h2>
         </div>
-        <div ref={gridRef} style={getGridStyles()} className="grid grid-cols-2 md:grid-cols-3 border-t-2 border-l-2 border-orange-300">
+        <div ref={gridRef} style={getGridStyles()} className="grid grid-cols-2 md:grid-cols-3 border-t-2 border-l-2 border-border">
           {features.map((feature, index) => (
             <div
               key={index}
-              className="border-r-2 border-b-2 border-orange-300 p-6 md:p-8 flex flex-col items-center text-center bg-white hover:bg-orange-50 transition-colors duration-300"
+              className="border-r-2 border-b-2 border-border p-6 md:p-8 flex flex-col items-center text-center bg-card hover:bg-muted/50 transition-colors duration-300"
             >
               <div className="mb-4">{feature.icon}</div>
               <h4 className="text-lg md:text-2xl tracking-tighter font-semibold text-gray-900 mb-2">

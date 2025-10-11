@@ -1,6 +1,6 @@
 import { Button } from "./ui/button";
 import { Star, Quote, ArrowLeft, ArrowRight } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useScrollAnimation, useCountAnimation, useStaggeredAnimation } from "../hooks/useScrollAnimation";
 
 const Testimonials = () => {
@@ -71,6 +71,7 @@ const Testimonials = () => {
   ];
 
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
+  const [isAutoplayActive, setIsAutoplayActive] = useState(true);
 
   const nextTestimonial = () => {
     setCurrentTestimonial((prev) => (prev + 1) % testimonials.length);
@@ -78,6 +79,26 @@ const Testimonials = () => {
 
   const prevTestimonial = () => {
     setCurrentTestimonial((prev) => (prev - 1 + testimonials.length) % testimonials.length);
+  };
+
+  // Autoplay functionality
+  useEffect(() => {
+    if (!isAutoplayActive) return;
+
+    const interval = setInterval(() => {
+      setCurrentTestimonial((prev) => (prev + 1) % testimonials.length);
+    }, 4000); // Change testimonial every 4 seconds
+
+    return () => clearInterval(interval);
+  }, [isAutoplayActive, testimonials.length]);
+
+  // Pause autoplay when user interacts
+  const handleUserInteraction = () => {
+    setIsAutoplayActive(false);
+    // Resume autoplay after 10 seconds of no interaction
+    setTimeout(() => {
+      setIsAutoplayActive(true);
+    }, 10000);
   };
 
   const current = testimonials[currentTestimonial];
@@ -94,9 +115,9 @@ const Testimonials = () => {
         {/* Section Header */}
         <div ref={ref} style={getHeaderStyles()} className="text-center mb-16">
           <h2 className="text-4xl lg:text-5xl font-bold tracking-tight mb-4">
-            What Our <span className="text-orange-500">Clients Say</span>
+            What Our <span className="text-primary">Clients Say</span>
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             Don't just take our word for it. Here's what our satisfied clients have to say about their experience with us.
           </p>
         </div>
@@ -108,8 +129,8 @@ const Testimonials = () => {
           className="bg-white rounded-3xl shadow-2xl p-8 lg:p-12 mb-16 relative overflow-hidden"
         >
           {/* Background Pattern */}
-          <div className="absolute top-0 right-0 w-32 h-32 bg-orange-100 rounded-full -translate-y-16 translate-x-16"></div>
-          <div className="absolute bottom-0 left-0 w-24 h-24 bg-orange-50 rounded-full translate-y-12 -translate-x-12"></div>
+          <div className="absolute top-0 right-0 w-32 h-32 bg-primary/10 rounded-full -translate-y-16 translate-x-16"></div>
+          <div className="absolute bottom-0 left-0 w-24 h-24 bg-primary/5 rounded-full translate-y-12 -translate-x-12"></div>
           
           <div className="relative z-10">
             <div className="flex items-center justify-between mb-8">
@@ -117,11 +138,11 @@ const Testimonials = () => {
                 <img
                   src={current.image}
                   alt={current.name}
-                  className="w-16 h-16 rounded-full object-cover border-4 border-orange-100"
+                  className="w-16 h-16 rounded-full object-cover border-4 border-primary/20"
                 />
                 <div>
-                  <h3 className="text-2xl font-bold text-gray-900">{current.name}</h3>
-                  <p className="text-gray-600">{current.role} • {current.location}</p>
+                  <h3 className="text-2xl font-bold text-foreground">{current.name}</h3>
+                  <p className="text-muted-foreground">{current.role} • {current.location}</p>
                 </div>
               </div>
               <div className="flex items-center space-x-1">
@@ -132,15 +153,15 @@ const Testimonials = () => {
             </div>
 
             <div className="mb-8">
-              <Quote className="h-12 w-12 text-orange-500 mb-4" />
-              <blockquote className="text-xl lg:text-2xl text-gray-700 leading-relaxed italic">
+              <Quote className="h-12 w-12 text-primary mb-4" />
+              <blockquote className="text-xl lg:text-2xl text-foreground leading-relaxed italic">
                 "{current.text}"
               </blockquote>
             </div>
 
-            <div className="bg-orange-50 rounded-2xl p-4 border-l-4 border-orange-500">
-              <p className="text-gray-700 font-medium">
-                <span className="text-orange-600">Property:</span> {current.property}
+            <div className="bg-primary/5 rounded-2xl p-4 border-l-4 border-primary">
+              <p className="text-foreground font-medium">
+                <span className="text-primary">Property:</span> {current.property}
               </p>
             </div>
           </div>
@@ -149,10 +170,13 @@ const Testimonials = () => {
         {/* Testimonial Navigation */}
         <div className="flex items-center justify-center space-x-4 mb-16">
           <Button
-            onClick={prevTestimonial}
+            onClick={() => {
+              prevTestimonial();
+              handleUserInteraction();
+            }}
             variant="outline"
             size="lg"
-            className="rounded-full p-3 hover:bg-orange-500 hover:text-white transition-all duration-300"
+            className="rounded-full p-3 hover:bg-primary hover:text-primary-foreground transition-all duration-300"
           >
             <ArrowLeft className="h-5 w-5" />
           </Button>
@@ -161,21 +185,27 @@ const Testimonials = () => {
             {testimonials.map((_, index) => (
               <button
                 key={index}
-                onClick={() => setCurrentTestimonial(index)}
+                onClick={() => {
+                  setCurrentTestimonial(index);
+                  handleUserInteraction();
+                }}
                 className={`w-3 h-3 rounded-full transition-all duration-300 ${
                   index === currentTestimonial 
-                    ? 'bg-orange-500 scale-125' 
-                    : 'bg-gray-300 hover:bg-orange-300'
+                    ? 'bg-primary scale-125' 
+                    : 'bg-muted hover:bg-primary/50'
                 }`}
               />
             ))}
           </div>
 
           <Button
-            onClick={nextTestimonial}
+            onClick={() => {
+              nextTestimonial();
+              handleUserInteraction();
+            }}
             variant="outline"
             size="lg"
-            className="rounded-full p-3 hover:bg-orange-500 hover:text-white transition-all duration-300"
+            className="rounded-full p-3 hover:bg-primary hover:text-primary-foreground transition-all duration-300"
           >
             <ArrowRight className="h-5 w-5" />
           </Button>
@@ -188,28 +218,28 @@ const Testimonials = () => {
           className="grid grid-cols-2 lg:grid-cols-4 gap-8 mb-16"
         >
           <div ref={propertiesSoldRef} className="text-center group">
-            <div className="text-4xl font-bold text-orange-500 mb-2 group-hover:scale-110 transition-transform duration-300">
+            <div className="text-4xl font-bold text-primary mb-2 group-hover:scale-110 transition-transform duration-300">
               {propertiesSold}+
             </div>
-            <div className="text-gray-600">Properties Sold</div>
+            <div className="text-muted-foreground">Properties Sold</div>
           </div>
           <div ref={happyClientsRef} className="text-center group">
-            <div className="text-4xl font-bold text-orange-500 mb-2 group-hover:scale-110 transition-transform duration-300">
+            <div className="text-4xl font-bold text-primary mb-2 group-hover:scale-110 transition-transform duration-300">
               {happyClients}+
             </div>
-            <div className="text-gray-600">Happy Clients</div>
+            <div className="text-muted-foreground">Happy Clients</div>
           </div>
           <div ref={yearsExperienceRef} className="text-center group">
-            <div className="text-4xl font-bold text-orange-500 mb-2 group-hover:scale-110 transition-transform duration-300">
+            <div className="text-4xl font-bold text-primary mb-2 group-hover:scale-110 transition-transform duration-300">
               {yearsExperience}+
             </div>
-            <div className="text-gray-600">Years Experience</div>
+            <div className="text-muted-foreground">Years Experience</div>
           </div>
           <div ref={clientSatisfactionRef} className="text-center group">
-            <div className="text-4xl font-bold text-orange-500 mb-2 group-hover:scale-110 transition-transform duration-300">
+            <div className="text-4xl font-bold text-primary mb-2 group-hover:scale-110 transition-transform duration-300">
               {clientSatisfaction}%
             </div>
-            <div className="text-gray-600">Client Satisfaction</div>
+            <div className="text-muted-foreground">Client Satisfaction</div>
           </div>
         </div>
 
@@ -228,8 +258,8 @@ const Testimonials = () => {
                   className="w-12 h-12 rounded-full object-cover mr-4"
                 />
                 <div>
-                  <h4 className="font-bold text-gray-900">{testimonial.name}</h4>
-                  <p className="text-sm text-gray-600">{testimonial.role}</p>
+                  <h4 className="font-bold text-foreground">{testimonial.name}</h4>
+                  <p className="text-sm text-muted-foreground">{testimonial.role}</p>
                 </div>
               </div>
               <div className="flex items-center mb-3">
@@ -237,7 +267,7 @@ const Testimonials = () => {
                   <Star key={i} className="h-4 w-4 fill-yellow-400 text-yellow-400" />
                 ))}
               </div>
-              <p className="text-gray-700 text-sm leading-relaxed">
+              <p className="text-foreground text-sm leading-relaxed">
                 "{testimonial.text}"
               </p>
             </div>

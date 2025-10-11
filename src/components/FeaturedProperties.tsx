@@ -6,7 +6,7 @@ const FeaturedProperties = () => {
   const properties = [
     {
       id: 1,
-      image: "https://framerusercontent.com/images/93Cxsep5zX8709HWfq8ZQUjdrOc.png?scale-down-to=512",
+      image: "https://s3.amazonaws.com/ideas-after/11e05ab5-3b36-4a8f-b0d3-c68eefb34c52.jpeg",
       price: "₹15 Crores",
       title: "Modern Luxury Villa",
       location: "Bandra West, Mumbai",
@@ -18,7 +18,7 @@ const FeaturedProperties = () => {
     },
     {
       id: 2,
-      image: "https://framerusercontent.com/images/9iOCryNrB7hYwEiN51ZC4yacRdg.png?scale-down-to=512",
+      image: "https://images.unsplash.com/photo-1600121848594-d8644e57abab?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDE1fHx8ZW58MHx8fHx8",
       price: "₹3.5 Lakhs/month",
       title: "Premium Apartment",
       location: "Gurgaon, Haryana",
@@ -30,7 +30,7 @@ const FeaturedProperties = () => {
     },
     {
       id: 3,
-      image: "https://framerusercontent.com/images/eqdRD2hUbm9mF1btVinGnGOwpsw.png?scale-down-to=512",
+      image: "https://hips.hearstapps.com/hmg-prod/images/gray-living-room-3-1572014242.jpg?crop=1.00xw:0.794xh;0,0.182xh",
       price: "₹1.8 Crores",
       title: "Cozy Family Home",
       location: "Whitefield, Bangalore",
@@ -42,7 +42,7 @@ const FeaturedProperties = () => {
     },
     {
       id: 4,
-      image: "https://framerusercontent.com/images/LbrZluq2fZHITWnzE2pd0uc.png?scale-down-to=512",
+      image: "https://evolveartisanal.com/wp-content/uploads/2022/03/4.-Layer-Shades-Of-Grey-_-Evolve-India.jpg",
       price: "₹2.5 Lakhs/month",
       title: "Sea-facing Condo",
       location: "Goa, India",
@@ -69,9 +69,9 @@ const FeaturedProperties = () => {
         {/* Section Header */}
         <div ref={ref} style={getHeaderStyles()} className="text-center mb-16">
           <h2 className="text-4xl lg:text-5xl font-bold tracking-tight mb-4">
-            Featured <span className="text-orange-500">Properties</span>
+            Featured <span className="text-primary">Properties</span>
           </h2>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
             Discover our handpicked selection of premium properties that offer the perfect blend of luxury and comfort.
           </p>
         </div>
@@ -92,7 +92,7 @@ const FeaturedProperties = () => {
                   className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
                 />
                 {property.featured && (
-                  <div className="absolute top-4 left-4 bg-orange-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                  <div className="absolute top-4 left-4 bg-primary text-primary-foreground px-3 py-1 rounded-full text-sm font-semibold">
                     Featured
                   </div>
                 )}
@@ -100,14 +100,14 @@ const FeaturedProperties = () => {
                   <Button
                     size="sm"
                     variant="secondary"
-                    className="bg-white/90 hover:bg-white text-gray-700 rounded-full p-2 h-10 w-10"
+                    className="bg-background/90 hover:bg-background text-foreground rounded-full p-2 h-10 w-10"
                   >
                     <Heart className="h-4 w-4" />
                   </Button>
                   <Button
                     size="sm"
                     variant="secondary"
-                    className="bg-white/90 hover:bg-white text-gray-700 rounded-full p-2 h-10 w-10"
+                    className="bg-background/90 hover:bg-background text-foreground rounded-full p-2 h-10 w-10"
                   >
                     <Eye className="h-4 w-4" />
                   </Button>
@@ -126,20 +126,20 @@ const FeaturedProperties = () => {
               {/* Property Details */}
               <div className="p-6">
                 <div className="flex justify-between items-start mb-3">
-                  <h3 className="text-xl font-bold text-gray-900 group-hover:text-orange-500 transition-colors">
+                  <h3 className="text-xl font-bold text-foreground group-hover:text-primary transition-colors">
                     {property.title}
                   </h3>
-                  <span className="text-2xl font-bold text-orange-500">
+                  <span className="text-2xl font-bold text-primary">
                     {property.price}
                   </span>
                 </div>
 
-                <div className="flex items-center text-gray-600 mb-4">
+                <div className="flex items-center text-muted-foreground mb-4">
                   <MapPin className="h-4 w-4 mr-1" />
                   <span className="text-sm">{property.location}</span>
                 </div>
 
-                <div className="flex items-center justify-between text-sm text-gray-600">
+                <div className="flex items-center justify-between text-sm text-muted-foreground">
                   <div className="flex items-center">
                     <Bed className="h-4 w-4 mr-1" />
                     <span>{property.beds} beds</span>
@@ -162,7 +162,7 @@ const FeaturedProperties = () => {
         <div className="text-center">
           <Button 
             size="lg" 
-            className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 rounded-2xl text-lg font-semibold transition-all duration-300 hover:scale-105 cursor-pointer"
+            className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-4 rounded-2xl text-lg font-semibold transition-all duration-300 hover:scale-105 cursor-pointer"
           >
             View All Properties
           </Button>

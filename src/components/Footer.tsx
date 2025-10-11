@@ -38,7 +38,7 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white relative overflow-hidden mt-10">
+    <footer className="bg-gradient-to-br from-card via-muted to-card text-card-foreground relative overflow-hidden mt-10">
       {/* Decorative Background */}
       <div className="absolute inset-0 opacity-5">
         <div
@@ -49,19 +49,19 @@ const Footer = () => {
           }}
         ></div>
       </div>
-      <div className="absolute top-0 right-0 w-64 h-64 bg-orange-500 rounded-full opacity-10 -mr-32 -mt-32"></div>
-      <div className="absolute bottom-0 left-0 w-48 h-48 bg-orange-400 rounded-full opacity-10 -ml-24 -mb-24"></div>
+      <div className="absolute top-0 right-0 w-64 h-64 bg-primary rounded-full opacity-10 -mr-32 -mt-32"></div>
+      <div className="absolute bottom-0 left-0 w-48 h-48 bg-primary/80 rounded-full opacity-10 -ml-24 -mb-24"></div>
 
       <div className="relative z-10">
         {/* Headline */}
-        <div className="border-b border-gray-700">
+        <div className="border-b border-border">
           <div className="max-w-7xl mx-auto px-6 py-12 text-center">
             <h3 className="text-2xl sm:text-3xl lg:text-4xl font-semibold tracking-tight mb-4">
               Find Your{" "}
-              <span className="text-orange-500">Dream Property</span> with
+              <span className="text-primary">Dream Property</span> with
               Us!
             </h3>
-            <p className="text-gray-300 text-base sm:text-lg mb-8">
+            <p className="text-muted-foreground text-base sm:text-lg mb-8">
               We provide exceptional real estate services and personalized solutions 
               to help you find, buy, sell, or rent properties across India's major cities.
             </p>
@@ -80,7 +80,7 @@ const Footer = () => {
                   className="h-10 w-auto"
                 />
               </div>
-              <div className="space-y-3 mb-6 text-sm text-gray-300">
+              <div className="space-y-3 mb-6 text-sm text-muted-foreground">
                 <div className="flex items-center">
                   <span className="mr-3">📍</span>
                   123 MG Road, Bandra West, Mumbai - 400050
@@ -102,37 +102,37 @@ const Footer = () => {
                <div className="flex space-x-4">
                  <a
                    href="#linkedin"
-                   className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-orange-500 transition-colors duration-300 group"
+                   className="w-10 h-10 bg-muted rounded-full flex items-center justify-center hover:bg-primary transition-colors duration-300 group"
                    aria-label="LinkedIn"
                  >
-                   <Linkedin className="h-5 w-5 text-gray-400 group-hover:text-white" />
+                   <Linkedin className="h-5 w-5 text-muted-foreground group-hover:text-primary-foreground" />
                  </a>
                  <a
                    href="#facebook"
-                   className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-orange-500 transition-colors duration-300 group"
+                   className="w-10 h-10 bg-muted rounded-full flex items-center justify-center hover:bg-primary transition-colors duration-300 group"
                    aria-label="Facebook"
                  >
-                   <Facebook className="h-5 w-5 text-gray-400 group-hover:text-white" />
+                   <Facebook className="h-5 w-5 text-muted-foreground group-hover:text-primary-foreground" />
                  </a>
                  <a
                    href="#instagram"
-                   className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-orange-500 transition-colors duration-300 group"
+                   className="w-10 h-10 bg-muted rounded-full flex items-center justify-center hover:bg-primary transition-colors duration-300 group"
                    aria-label="Instagram"
                  >
-                   <Instagram className="h-5 w-5 text-gray-400 group-hover:text-white" />
+                   <Instagram className="h-5 w-5 text-muted-foreground group-hover:text-primary-foreground" />
                  </a>
                </div>
             </div>
 
             {/* Quick Links */}
             <div>
-              <h3 className="text-lg font-bold text-white mb-6">Quick Links</h3>
+              <h3 className="text-lg font-bold text-card-foreground mb-6">Quick Links</h3>
               <ul className="space-y-3">
                 {quickLinks.map((link, index) => (
                   <li key={index}>
                     <button
                       onClick={() => scrollToSection(link.id)}
-                      className="text-left w-full text-gray-300 hover:text-orange-500 transition-colors duration-300 text-sm flex items-center group"
+                      className="text-left w-full text-muted-foreground hover:text-primary transition-colors duration-300 text-sm flex items-center group"
                     >
                       <span>{link.name}</span>
                       <span className="ml-1 opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all duration-200">
@@ -146,11 +146,11 @@ const Footer = () => {
 
             {/* Services */}
             <div>
-              <h3 className="text-lg font-bold text-white mb-6">Our Services</h3>
+              <h3 className="text-lg font-bold text-card-foreground mb-6">Our Services</h3>
               <ul className="space-y-3">
                 {services.map((service, index) => (
                   <li key={index}>
-                    <button className="text-left w-full text-gray-300 hover:text-orange-500 transition-colors duration-300 text-sm flex items-center group">
+                    <button className="text-left w-full text-muted-foreground hover:text-primary transition-colors duration-300 text-sm flex items-center group">
                       <span>{service.name}</span>
                       <span className="ml-1 opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all duration-200">
                         →
@@ -163,11 +163,11 @@ const Footer = () => {
 
             {/* Locations */}
             <div>
-              <h3 className="text-lg font-bold text-white mb-6">Our Locations</h3>
+              <h3 className="text-lg font-bold text-card-foreground mb-6">Our Locations</h3>
               <ul className="space-y-3">
                 {locations.map((location, index) => (
                   <li key={index}>
-                    <button className="text-left w-full text-gray-300 hover:text-orange-500 transition-colors duration-300 text-sm flex items-center group">
+                    <button className="text-left w-full text-muted-foreground hover:text-primary transition-colors duration-300 text-sm flex items-center group">
                       <span>{location.name}</span>
                       <span className="ml-1 opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all duration-200">
                         →
@@ -181,20 +181,20 @@ const Footer = () => {
         </div>
 
         {/* Bottom Footer */}
-        <div className="border-t border-gray-700">
+        <div className="border-t border-border">
           <div className="max-w-7xl mx-auto px-6 py-8">
             <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-              <div className="text-gray-400 text-sm">
+              <div className="text-muted-foreground text-sm">
                 © 2025 EstatePro. All rights reserved. | Privacy Policy | Terms of Service
               </div>
               <div className="flex space-x-6 text-sm">
-                <a href="#privacy" className="text-gray-400 hover:text-orange-500 transition-colors duration-300">
+                <a href="#privacy" className="text-muted-foreground hover:text-primary transition-colors duration-300">
                   Privacy Policy
                 </a>
-                <a href="#terms" className="text-gray-400 hover:text-orange-500 transition-colors duration-300">
+                <a href="#terms" className="text-muted-foreground hover:text-primary transition-colors duration-300">
                   Terms of Service
                 </a>
-                <a href="#cookies" className="text-gray-400 hover:text-orange-500 transition-colors duration-300">
+                <a href="#cookies" className="text-muted-foreground hover:text-primary transition-colors duration-300">
                   Cookie Policy
                 </a>
               </div>
