@@ -6,12 +6,14 @@ import Contact from "./components/Contact"
 import Footer from "./components/Footer"
 import BackToTop from "./components/BackToTop"
 import AskAgent from "./components/AskAgent"
+import WhyUs from "./components/WhyUs"
 
 const App = () => {
   return (
     <div className="min-h-screen">
       <Hero />
       <FeaturedProperties />
+      <WhyUs />
       <Services />
       <Testimonials />
       <Contact />
