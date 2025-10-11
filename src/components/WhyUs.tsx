@@ -1,9 +1,9 @@
 import {
-  Layers,
+  Bot,
   Sparkles,
-  Bookmark,
+  BookCheck,
   Star,
-  Command,
+  UserSearch,
   Cuboid,
 } from "lucide-react";
 import { useScrollAnimation } from "../hooks/useScrollAnimation";
@@ -15,7 +15,7 @@ export default function WhyUs() {
     {
       title: "Personalized Search",
       desc: "At EstatePro, we understand that every client has unique needs and preferences. Our AI-powered search engine learns your requirements to show you the most relevant properties.",
-      icon: <Command className="w-16 h-16 text-orange-500" strokeWidth={1.25} />,
+      icon: <UserSearch className="w-16 h-16 text-orange-500" strokeWidth={1.25} />,
     },
     {
       title: "Premium Properties",
@@ -25,7 +25,7 @@ export default function WhyUs() {
     {
       title: "Expert AI Guidance",
       desc: "Get intelligent recommendations and market insights with our advanced AI technology. Navigate the complexities of real estate with confidence.",
-      icon: <Layers className="w-16 h-16 text-orange-500" strokeWidth={1.25} />,
+      icon: <Bot className="w-16 h-16 text-orange-500" strokeWidth={1.25} />,
     },
     {
       title: "Seamless Process",
@@ -35,7 +35,7 @@ export default function WhyUs() {
     {
       title: "Trusted Expertise",
       desc: "Leverage our years of experience in the Indian real estate market to make confident property decisions. We know the market inside out.",
-      icon: <Bookmark className="w-16 h-16 text-orange-500" strokeWidth={1.25} />,
+      icon: <BookCheck className="w-16 h-16 text-orange-500" strokeWidth={1.25} />,
     },
     {
       title: "Tailored Solutions",
