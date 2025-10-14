@@ -159,8 +159,9 @@ const AskAgent = () => {
     }
   };
 
-  const handleQuickQuestion = (questionText: string, index: number) => {
-    setSelectedQuestions(prev => [...prev, index]);
+  const handleQuickQuestion = (questionText: string) => {
+    // Hide all questions by setting selectedQuestions to contain all indices
+    setSelectedQuestions([...Array(quickQuestions.length)].map((_, i) => i));
     handleSendMessage(questionText);
   };
 
@@ -249,7 +250,7 @@ const AskAgent = () => {
                   !selectedQuestions.includes(index) && (
                     <button
                       key={index}
-                      onClick={() => handleQuickQuestion(question.text, index)}
+                      onClick={() => handleQuickQuestion(question.text)}
                       className="flex items-center space-x-1 px-2 py-1 text-xs bg-muted hover:bg-primary/10 hover:text-primary rounded-full transition-colors"
                     >
                       {question.icon}
